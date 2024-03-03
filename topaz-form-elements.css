@@ -18,9 +18,9 @@
 	left: 0;
 	width: 20px;
 	height: 20px;
-	background-color: #eee;
-	border-radius: 50%;
+	background-color: transparent; /* Make background transparent */
 	border: 2px solid #ccc; /* Add outline */
+	border-radius: 50%;
 	transition: background-color 0.3s ease;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .radio-container input:checked ~ .radio-checkmark {
-	background-color: #98FB98; /* Change the color to pale green */
+	background-color: #32DD85; /* Change the color to pale green */
 	border-color: transparent; /* Remove outline for checked state */
 }
 
@@ -52,46 +52,47 @@
 
 /* Hide default checkbox */
 input[type="checkbox"] {
-	position: relative; /* Move the checkbox element to the bottom */
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 2px solid #ccc;
-	border-radius: 3px;
-	outline: none;
-	cursor: pointer;
-	transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+    /* Move the checkbox element to the bottom */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.1s, border-color 0.1s;
 }
 
 /* Custom checkmark */
 input[type="checkbox"]::after {
-	content: "";
-	position: absolute;
-	top: 0px; /* Move the checkbox a bit to the bottom */
-	left: 50%;
-	transform: translateX(-50%) rotate(45deg); /* Adjust rotation */
-	width: 6px; /* Adjust the width */
-	height: 11px; /* Adjust the height */
-	border-bottom: 2px solid #fff;
-	border-right: 2px solid #fff;
-	opacity: 0;
-	transition: transform 0.3s, opacity 0.3s;
+    content: "";
+    position: absolute;
+    bottom: 3.6px; /* Move the checkbox a bit to the bottom */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg) scale(0.8); /* Adjust rotation and initial scale */
+    width: 6px; /* Adjust the width */
+    height: 11px; /* Adjust the height */
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out; /* Add animation for checkmark drawing and fade-in */
 }
 
 /* Custom checkmark when checked */
 input[type="checkbox"]:checked::after {
-	opacity: 1;
+    transform: translateX(-50%) rotate(45deg) scale(1); /* Scale up the checkmark when checked */
+    opacity: 1; /* Make the checkmark fully visible when checked */
 }
 
 /* Custom checkbox when checked */
 input[type="checkbox"]:checked {
-	background-color: #3ADD85; /* Change the background color to pale green */
-	border-color: #3ADD85; /* Change the border color to pale green */
+    background-color: #3ADD85;
+    border-color: #3ADD85;
 }
 
-/* Text alignment */
 .checkbox-label span {
-	margin-left: 3px; /* Adjust spacing between checkbox and text */
+    margin-left: 3px;
 }
