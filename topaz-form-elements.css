@@ -1,98 +1,106 @@
-.radio-container {
-	position: relative;
-	display: inline-block;
-	padding-left: 25px;
-	margin-right: 5px;
-	cursor: pointer;
-}
-
-.radio-container input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.radio-checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 20px;
+/* Radio button styles */
+input[type="radio"] {
+	position: relative; /* Positioning */
+	appearance: none; /* Remove default appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 20px; /* Size */
 	height: 20px;
-	background-color: transparent; /* Make background transparent */
-	border: 2px solid #ccc; /* Add outline */
-	border-radius: 50%;
-	transition: background-color 0.3s ease;
+	border: 2px solid #ccc; /* Border */
+	border-radius: 50%; /* Circular shape */
+	outline: none; /* Remove outline */
+	cursor: pointer; /* Cursor */
+	vertical-align: middle; /* Vertical alignment */
+	transition: background-color 0.1s, border-color 0.1s; /* Transition */
 }
 
-.radio-container:hover .radio-checkmark {
-	background-color: #ccc;
-}
-
-.radio-container input:checked ~ .radio-checkmark {
-	background-color: #32DD85; /* Change the color to pale green */
-	border-color: transparent; /* Remove outline for checked state */
-}
-
-.radio-checkmark:after {
-	content: "";
+/* Custom dot inside the radio button */
+input[type="radio"]::after {
+	content: ""; /* Create dot */
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	width: 11px;
-	height: 11px;
+	transform: translate(-50%, -50%) scale(0); /* Initial scale */
+	width: 10px; /* Dot size */
+	height: 10px;
 	border-radius: 50%;
-	background: white;
-	transition: transform 0.1s ease;
+	background-color: #fff; /* Dot color */
+	opacity: 0; /* Initially hidden */
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition */
 }
 
-.radio-container input:checked ~ .radio-checkmark:after {
-	transform: translate(-50%, -50%) scale(1);
+/* Custom dot when radio button is checked */
+input[type="radio"]:checked::after {
+	transform: translate(-50%, -50%) scale(1); /* Scale up the dot */
+	opacity: 1; /* Make the dot visible */
 }
 
-/* Hide default checkbox */
+/* Custom radio button when checked */
+input[type="radio"]:checked {
+	background-color: #3ADD85; /* Background color */
+	border-color: #3ADD85; /* Border color */
+}
+
+/* Text alignment for radio buttons */
+.radio-label {
+	display: inline-block; /* Inline block */
+	cursor: pointer; /* Cursor */
+}
+
+.radio-label span {
+	vertical-align: middle; /* Vertical alignment */
+}
+
+/* Checkbox styles */
 input[type="checkbox"] {
-    position: relative;
-    /* Move the checkbox element to the bottom */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 3px;
-    outline: none;
-    cursor: pointer;
-    transition: background-color 0.1s, border-color 0.1s;
+	position: relative; /* Positioning */
+	appearance: none; /* Remove default appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding-top: 0px; /* Padding */
+	width: 20px; /* Size */
+	height: 20px;
+	border: 2px solid #ccc; /* Border */
+	border-radius: 3px; /* Border radius */
+	outline: none; /* Remove outline */
+	cursor: pointer; /* Cursor */
+	transition: background-color 0.1s, border-color 0.1s; /* Transition */
 }
 
 /* Custom checkmark */
 input[type="checkbox"]::after {
-    content: "";
-    position: absolute;
-    bottom: 3.6px; /* Move the checkbox a bit to the bottom */
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg) scale(0.8); /* Adjust rotation and initial scale */
-    width: 6px; /* Adjust the width */
-    height: 11px; /* Adjust the height */
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    opacity: 0; /* Initially hidden */
-    transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out; /* Add animation for checkmark drawing and fade-in */
+	content: ""; /* Create checkmark */
+	position: absolute;
+	bottom: 3.6px; /* Position */
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg) scale(0.8); /* Initial rotation and scale */
+	width: 6px; /* Size */
+	height: 11px;
+	border-bottom: 2px solid #fff; /* Borders */
+	border-right: 2px solid #fff;
+	opacity: 0; /* Initially hidden */
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Transition */
 }
 
 /* Custom checkmark when checked */
 input[type="checkbox"]:checked::after {
-    transform: translateX(-50%) rotate(45deg) scale(1); /* Scale up the checkmark when checked */
-    opacity: 1; /* Make the checkmark fully visible when checked */
+	transform: translateX(-50%) rotate(45deg) scale(1); /* Scale up the checkmark */
+	opacity: 1; /* Make the checkmark visible */
 }
 
 /* Custom checkbox when checked */
 input[type="checkbox"]:checked {
-    background-color: #3ADD85;
-    border-color: #3ADD85;
+	background-color: #3ADD85; /* Background color */
+	border-color: #3ADD85; /* Border color */
+}
+
+/* Text alignment for checkboxes */
+.checkbox-label {
+	display: inline-flex; /* Inline flex */
+	align-items: center; /* Align items vertically */
+	cursor: pointer; /* Cursor */
 }
 
 .checkbox-label span {
-    margin-left: 3px;
+	margin-left: 3px; /* Margin between checkbox and label */
 }
