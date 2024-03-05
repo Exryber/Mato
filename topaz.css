@@ -1,0 +1,371 @@
+/* Set font-family based on device */
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* Apply system font for Apple devices */
+@media screen and (-webkit-touch-callout: none) {
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* Customize these values */
+	--corner-radius: 4.2px;
+	--primary-color: ;
+}
+
+.fade-out {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: var(--corner-radius);
+	padding: 7.6px 12px;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.4px;
+	background: #EEEEEE;
+	color: black;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+	background-color: #DDDDDD;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+h3 {
+	font-weight: 500;
+	font-size: 19px;
+}
+
+h4 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+.elevated-button {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 1px -2px rgba(0, 0, 0, .15), 0 1px 5px 0 rgba(0, 0, 0, .1);
+}
+
+/* Default button styles */
+.btn-text {
+    background: transparent; /* Make background completely transparent */
+}
+
+/* Feedback effect on hover */
+.btn-text:hover {
+    background-color: rgba(221, 221, 221, 0.3); /* Fainter semi-transparent background */
+    color: #000; /* Darker text color */
+}
+
+.btn-caps {
+	text-transform: uppercase;
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace; /* Specify font family */
+    font-size: 14px; /* Adjust font size */
+    background-color: #f5f5f5; /* Set background color */
+    padding: 2px 6px; /* Add padding */
+    border-radius: 4px; /* Add border radius */
+}
+
+
+
+/* Radio button styles */
+input[type="radio"] {
+	position: relative; /* Positioning */
+	appearance: none; /* Remove default appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 20px; /* Size */
+	height: 20px;
+	border: 2px solid #ccc; /* Border */
+	border-radius: 50%; /* Circular shape */
+	outline: none; /* Remove outline */
+	cursor: pointer; /* Cursor */
+	vertical-align: middle; /* Vertical alignment */
+	transition: background-color 0.1s, border-color 0.1s; /* Transition */
+}
+
+/* Custom dot inside the radio button */
+input[type="radio"]::after {
+	content: ""; /* Create dot */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0); /* Initial scale */
+	width: 10.8px; /* Dot size */
+	height: 10.8px;
+	border-radius: 50%;
+	background-color: #3ADD85; /* Dot color */
+	opacity: 0; /* Initially hidden */
+	transition: transform 0.1s ease-in-out, opacity 0s ease-in-out; /* Transition */
+}
+
+/* Custom dot when radio button is checked */
+input[type="radio"]:checked::after {
+	transform: translate(-50%, -50%) scale(1); /* Scale up the dot */
+	opacity: 1; /* Make the dot visible */
+}
+
+/* Custom radio button when checked */
+input[type="radio"]:checked {
+	background-color: #00000000; /* Background color */
+	border-color: #3ADD85; /* Border color */
+}
+
+/* Text alignment for radio buttons */
+.radio-label {
+	display: inline-block; /* Inline block */
+	cursor: pointer; /* Cursor */
+}
+
+.radio-label span {
+	vertical-align: middle; /* Vertical alignment */
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+    position: relative; /* Positioning */
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-top: 0px; /* Padding */
+    width: 20px; /* Size */
+    height: 20px;
+    border: 2px solid #ccc; /* Border */
+    border-radius: 3px; /* Border radius */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Cursor */
+    transition: background-color 0.1s, border-color 0.1s; /* Transition */
+    vertical-align: middle; /* Align with text */
+}
+
+/* Custom checkmark */
+input[type="checkbox"]::after {
+    content: ""; /* Create checkmark */
+    position: absolute;
+    bottom: 3.8px; /* Position */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg) scale(0.9); /* Initial rotation and scale */
+    width: 6px; /* Size */
+    height: 11px;
+    border-bottom: 2px solid #fff; /* Borders */
+    border-right: 2px solid #fff;
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Transition */
+}
+
+input[type="checkbox"]:checked::after {
+    transform: translateX(-50%) rotate(45deg) scale(1);
+    opacity: 1;
+}
+
+/* Custom checkbox when checked */
+input[type="checkbox"]:checked {
+    background-color: #3ADD85; /* Background color */
+    border-color: #3ADD85; /* Border color */
+}
+
+/* Text alignment for checkboxes */
+.checkbox-label {
+    display: inline-flex; /* Inline flex */
+    align-items: center; /* Align items vertically */
+    cursor: pointer; /* Cursor */
+    vertical-align: middle; /* Align with text */
+}
+
+.checkbox-label span {
+    margin-left: 3px; /* Margin between checkbox and label */
+}
+
+/* Base input styling */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Custom styling for text input */
+input[type="text"] {
+    background-color: #f8f8f8;
+}
+
+/* Custom styling for password input */
+input[type="password"] {
+    background-color: #f0f0f0;
+}
+
+/* Custom styling for email input */
+input[type="email"] {
+    background-color: #e0e0e0;
+}
+
+/* Focus styling */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Disabled input styling */
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Base range input styling */
+input[type="range"] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 10px;
+	background: #f0f0f0;
+	border-radius: 5px;
+	outline: none;
+	margin: 10px 0;
+}
+
+/* Custom track styling */
+input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 10px;
+	background: #f0f0f0;
+	border-radius: 5px;
+}
+
+/* Custom thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	background: #007bff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+/* Thumb hover effect */
+input[type="range"]::-webkit-slider-thumb:hover {
+	background: #0056b3;
+}
+
+/* Thumb active effect */
+input[type="range"]::-webkit-slider-thumb:active {
+	background: #003d80;
+}
+
+textarea {
+    width: 100%; /* Set width to fill its container */
+    height: 150px; /* Set initial height */
+    padding: 8px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius */
+    resize: vertical; /* Allow vertical resizing */
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
+/* Meter styling */
+meter {
+  width: 100%; /* Full width */
+  height: 20px; /* Height */
+}
+
+/* Meter value styling */
+meter::-webkit-meter-bar {
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Meter progress styling */
+meter::-webkit-meter-optimum-value, 
+meter::-webkit-meter-suboptimum-value, 
+meter::-webkit-meter-even-less-good-value {
+  background-color: #4caf50; /* Progress color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Progress Bar styling */
+progress {
+  width: 100%; /* Full width */
+  height: 20px; /* Height */
+}
+
+/* Progress Bar value styling */
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Progress Bar progress styling */
+progress::-webkit-progress-value {
+  background-color: #4caf50; /* Progress color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Iframe styling */
+iframe {
+  border: 2px solid #ccc; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  width: 100%; /* Full width */
+  height: 400px; /* Height */
+}
+
+/* Table styles */
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse borders */
+  border: 2px solid #ccc; /* Border style */
+}
+
+/* Table header styles */
+th {
+  background-color: #f2f2f2; /* Header background color */
+  border: 1px solid #ccc; /* Border style */
+  padding: 8px; /* Padding */
+}
+
+/* Table cell styles */
+td {
+  border: 1px solid #ccc; /* Border style */
+  padding: 8px; /* Padding */
+}
+
+/* Alternating row background color */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Even row background color */
+	}
