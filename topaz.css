@@ -157,7 +157,7 @@ input[type="checkbox"] {
     padding-top: 0px; /* Padding */
     width: 19px; /* Size */
     height: 19px;
-    border: 2px solid #49454F; /* Border */
+    border: 2.2px solid #49454F; /* Border */
     border-radius: 2.6px; /* Border radius */
     outline: none; /* Remove outline */
     cursor: pointer; /* Cursor */
@@ -407,4 +407,4 @@ input[type="text"] {
 input[type="date"]:hover,
 input[type="text"]:hover {
   background-color: #DDDDDD;
-		}
+	}
