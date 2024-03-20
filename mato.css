@@ -27,22 +27,18 @@ body {
 }
 
 button {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 	border: none;
-	border-radius: 2rem;
-	padding: 9px 13px;
+	padding: 8px 12px;
 	font-size: 14px;
 	font-weight: 500;
-	background: #6750A4;
-	color: white;
-	cursor: pointer;
+	border-radius: 6.6px;
 	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	background-color: #F5F5F5;
 }
 
 button:hover {
-	background-color: #DDDDDD;
+	background-color: #C2C2C26E;
 }
 
 h1 {
@@ -93,8 +89,6 @@ code {
     border-radius: 8px; /* Add border radius */
 }
 
-
-
 /* Radio button styles */
 input[type="radio"] {
 	position: relative; /* Positioning */
@@ -103,12 +97,12 @@ input[type="radio"] {
 	-moz-appearance: none;
 	width: 19px; /* Size */
 	height: 19px;
-	border: 2px solid #49454F; /* Border */
+	border: 1.9px solid #49454F; /* Border */
 	border-radius: 50%; /* Circular shape */
 	outline: none; /* Remove outline */
 	cursor: pointer; /* Cursor */
 	vertical-align: middle; /* Vertical alignment */
-	transition: background-color 0.1s, border-color 0.1s; /* Transition */
+	transition: background-color 0.2s, border-color 0.08s; /* Transition */
 }
 
 /* Custom dot inside the radio button */
@@ -121,20 +115,20 @@ input[type="radio"]::after {
 	width: 10.8px; /* Dot size */
 	height: 10.8px;
 	border-radius: 50%;
-	background-color: #6750A4; /* Dot color */
+	background-color: #fff; /* Dot color */
 	opacity: 0; /* Initially hidden */
-	transition: transform 0.1s ease-in-out, opacity 0s ease-in-out; /* Transition */
+	transition: transform 0.2s ease-in-out, opacity 0.08s ease-in-out; /* Transition */
 }
 
 /* Custom dot when radio button is checked */
 input[type="radio"]:checked::after {
-	transform: translate(-50%, -50%) scale(0.94); /* Scale up the dot */
+	transform: translate(-50%, -50%) scale(0.86); /* Scale up the dot */
 	opacity: 1; /* Make the dot visible */
 }
 
 /* Custom radio button when checked */
 input[type="radio"]:checked {
-	background-color: #00000000; /* Background color */
+	background-color: #6750A4; /* Background color */
 	border-color: #6750A4; /* Border color */
 }
 
@@ -157,8 +151,8 @@ input[type="checkbox"] {
     padding-top: 0px; /* Padding */
     width: 19px; /* Size */
     height: 19px;
-    border: 2.2px solid #49454F; /* Border */
-    border-radius: 2.6px; /* Border radius */
+    border: 1.9px solid #49454F; /* Border */
+    border-radius: 3.4px; /* Border radius */
     outline: none; /* Remove outline */
     cursor: pointer; /* Cursor */
     transition: background-color 0.1s, border-color 0.1s; /* Transition */
@@ -169,19 +163,19 @@ input[type="checkbox"] {
 input[type="checkbox"]::after {
     content: ""; /* Create checkmark */
     position: absolute;
-    bottom: 3.8px; /* Position */
+    bottom: 3.9px; /* Position */
     left: 50%;
     transform: translateX(-50%) rotate(45deg) scale(0.9); /* Initial rotation and scale */
     width: 4px; /* Size */
     height: 9px;
-    border-bottom: 2px solid #fff; /* Borders */
-    border-right: 2px solid #fff;
+    border-bottom: 1.76px solid #fff; /* Borders */
+    border-right: 1.76px solid #fff;
     opacity: 0; /* Initially hidden */
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Transition */
 }
 
 input[type="checkbox"]:checked::after {
-    transform: translateX(-50%) rotate(45deg) scale(1.0);
+    transform: translateX(-50%) rotate(45deg) scale(1.02);
     opacity: 1;
 }
 
@@ -289,7 +283,7 @@ textarea {
     width: 100%; /* Set width to fill its container */
     height: 150px; /* Set initial height */
     padding: 8px; /* Add padding */
-    font-size: 16px; /* Set font size */
+    font-size: 14px; /* Set font size */
     border: 1px solid #ccc; /* Add border */
     border-radius: 4px; /* Add border radius */
     resize: vertical; /* Allow vertical resizing */
@@ -407,4 +401,41 @@ input[type="text"] {
 input[type="date"]:hover,
 input[type="text"]:hover {
   background-color: #DDDDDD;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+}
+
+.checkbox-list li {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.checkbox-list input[type="checkbox"] {
+  margin-right: 6px; /* Add spacing between checkbox and label */
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center; /* Vertically center label content */
+}
+
+.checkbox-list label span {
+  margin-top: 3px; /* Add top spacing to the text element */
+}
+
+ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+ul li {
+	margin-bottom: 10px;
 	}
