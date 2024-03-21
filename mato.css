@@ -98,7 +98,7 @@ input[type="radio"] {
 	-moz-appearance: none;
 	width: 19px; /* Size */
 	height: 19px;
-	border: 1.9px solid #49454F; /* Border */
+	border: 1.9px solid #757575; /* Border */
 	border-radius: 50%; /* Circular shape */
 	outline: none; /* Remove outline */
 	cursor: pointer; /* Cursor */
@@ -152,7 +152,7 @@ input[type="checkbox"] {
     padding-top: 0px; /* Padding */
     width: 19px; /* Size */
     height: 19px;
-    border: 1.9px solid #49454F; /* Border */
+    border: 1.9px solid #757575; /* Border */
     border-radius: 3.4px; /* Border radius */
     outline: none; /* Remove outline */
     cursor: pointer; /* Cursor */
