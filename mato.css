@@ -35,6 +35,7 @@ button {
 	border-radius: 6.6px;
 	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 	background-color: #F5F5F5;
+	color: #000;
 }
 
 button:hover {
@@ -128,8 +129,8 @@ input[type="radio"]:checked::after {
 
 /* Custom radio button when checked */
 input[type="radio"]:checked {
-	background-color: #6750A4; /* Background color */
-	border-color: #6750A4; /* Border color */
+	background-color: #46C59F; /* Background color */
+	border-color: #46C59F; /* Border color */
 }
 
 /* Text alignment for radio buttons */
@@ -181,8 +182,8 @@ input[type="checkbox"]:checked::after {
 
 /* Custom checkbox when checked */
 input[type="checkbox"]:checked {
-    background-color: #6750A4; /* Background color */
-    border-color: #6750A4; /* Border color */
+    background-color: #46C59F; /* Background color */
+    border-color: #46C59F; /* Border color */
 }
 
 /* Text alignment for checkboxes */
